@@ -44,4 +44,10 @@ public class Shoes extends Product {
     public Shoes(){
 
     }
+
+    public Shoes(int size, String material, ShoesType shoesType) {
+        this.size = size;
+        this.material = material;
+        this.shoesType = shoesType;
+    }
 }

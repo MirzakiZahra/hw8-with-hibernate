@@ -1,8 +1,10 @@
 package src;
 
+import Products.*;
 import Products.Book;
 import Products.Magazine;
 import Products.Radio;
+import Products.Shoes;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -93,7 +95,38 @@ public class Service {
         session.save(radio);
         transaction.commit();
         session.close();
-        
+
+
+    }
+    public void addShoes(int barcode, String name, int cost, int count, String feature,
+                         int size, String material, Enums.ShoesType shoesType
+                         ) {
+      Products.Shoes shoes = new Shoes(barcode, name, cost,
+                count, feature, size, material);
+
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(shoes);
+        transaction.commit();
+        session.close();
+
+
+    }
+    public void addTv(int barcode, String name, int cost, int count, String feature,
+                    String  brand, int inch, String quality
+    ) {
+      Products.Television television = new Products.Television(barcode, name, cost,
+                count, feature, brand, inch,quality);
+
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(television);
+        transaction.commit();
+        session.close();
+
+
+    }
+    public void addCartWithHibernate(){
 
     }
 }
