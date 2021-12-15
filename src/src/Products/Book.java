@@ -22,6 +22,9 @@ public class Book  extends Readable {
         this.page = page;
     }
 
+    public Book() {
+    }
+
     public Book(int id, String name, int cost, int count, String feature, String typeCover, String language, String publisher, String format, int page) {
         super(id, name, cost, count, feature, typeCover, language, publisher);
         this.format = format;

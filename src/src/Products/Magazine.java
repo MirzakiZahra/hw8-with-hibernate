@@ -51,4 +51,7 @@ public class Magazine extends Readable {
         this.periodPublish = periodPublish;
         this.magazineType = magazineType;
     }
+
+    public Magazine() {
+    }
 }

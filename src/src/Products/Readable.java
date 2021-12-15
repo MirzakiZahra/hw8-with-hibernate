@@ -9,6 +9,7 @@ public class Readable extends Product {
 
 
 
+
     public String getPublisher() {
         return publisher;
     }
