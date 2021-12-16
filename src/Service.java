@@ -19,11 +19,11 @@ public class Service {
     public void increaseWithHibernate(int barcode, int number) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        String sql ="select count from product where barcode= :barcode";
+        String sql = "select count from product where barcode= :barcode";
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Products.Product.class);
         query.setParameter("barcode", barcode);
-        Product product= (Product)query.list().get(0);
+        Product product = (Product) query.list().get(0);
         int temp = product.getCount() + number;
         product.setCount(temp);
         session.update(product);
@@ -34,11 +34,11 @@ public class Service {
     public void decreaseWithHibernate(int barcode, int number) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        String sql ="select count from product where barcode= :barcode";
+        String sql = "select count from product where barcode= :barcode";
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Products.Product.class);
         query.setParameter("barcode", barcode);
-        Product product= (Product)query.list().get(0);
+        Product product = (Product) query.list().get(0);
         int temp = product.getCount() - number;
         product.setCount(temp);
         session.update(product);
@@ -46,28 +46,25 @@ public class Service {
         session.close();
     }
 
-    public void addBook(int barcode, String name, int cost, int count, String feature,
-                        String typeCover, String language,
-                        String publisher, String format, int page) {
-        Products.Book book = new Book(barcode, name, cost,
-                count, feature, typeCover, language, publisher, format, page);
+    public void ShowProduct() {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        String sql = "select * from product";
+        SQLQuery query = session.createSQLQuery(sql);
+        query.addEntity(Products.Product.class);
+        List<Product> products = query.list();
+        products.stream().forEach(i -> System.out.println(i));
+    }
 
+    public void addBook(Book book) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(book);
         transaction.commit();
         session.close();
-
     }
 
-    public void addMagezine(int barcode, String name, int cost, int count, String feature,
-                            String typeCover, String language,
-                            String publisher, String type,
-                            String periodPublish,
-                            Enums.MagazineType magazineType) {
-        Products.Magazine magazine = new Magazine(barcode, name, cost,
-                count, feature, typeCover, language, publisher, type,
-                periodPublish, magazineType);
+    public void addMagezine(Magazine magazine) {
 
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -77,26 +74,15 @@ public class Service {
 
     }
 
-    public void addRadio(int barcode, String name, int cost, int count, String feature,
-                         String brand, String radioWave, Enums.SourceEnergyType sourceEnergyType
-    ) {
-        Products.Radio radio = new Radio(barcode, name, cost,
-                count, feature, brand, radioWave, sourceEnergyType);
-
+    public void addRadio(Radio radio) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(radio);
         transaction.commit();
         session.close();
-
-
     }
-    public void addShoes(int barcode, String name, int cost, int count, String feature,
-                         int size, String material, Enums.ShoesType shoesType
-                         ) {
-      Products.Shoes shoes = new Shoes(barcode, name, cost,
-                count, feature, size, material);
 
+    public void addShoes(Shoes shoes) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(shoes);
@@ -105,35 +91,31 @@ public class Service {
 
 
     }
-    public void addTv(int barcode, String name, int cost, int count, String feature,
-                    String  brand, int inch, String quality
-    ) {
-      Products.Television television = new Products.Television(barcode, name, cost,
-                count, feature, brand, inch,quality);
 
+    public void addTv(Television television) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(television);
         transaction.commit();
         session.close();
-
-
     }
-    public void addCartWithHibernate(int personaId){
+
+    public void addCartWithHibernate(int personaId) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         String sql = "select id from customer where personalId= :personalId";
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Cart.class);
         query.setParameter("personalId", personaId);
-       Cart cart = (Cart) query.list().get(0);
+        Cart cart = (Cart) query.list().get(0);
         session.save(cart);
         transaction.commit();
         session.close();
 
 
     }
-    public void addOrderWithHibernate(){
+
+    public void addOrderWithHibernate() {
 
     }
 }
