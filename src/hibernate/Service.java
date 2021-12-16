@@ -148,13 +148,14 @@ public class Service {
     public int findCustomerWithHibernate(int personalId){
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "sselect id from customer where personalId= :personalId";
+        String sql = "select * from customer where personalId= :personalId";
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Customer.class);
         query.setParameter("personalId", personalId);
-       Customer customer = (Customer) query.list().get(0);
-
-        return
+        int output= query.list().size();
+        transaction.commit();
+        session.close();
+        return output;
 
     }
     public void addProductToOrder(Customer customer) throws SQLException {

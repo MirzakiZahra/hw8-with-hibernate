@@ -17,15 +17,6 @@ public class DbCustomer extends Database {
     }
 
 
-    public void addProductToOrder(Customer customer) throws SQLException {
-        if (connection != null) {
-            Statement statement = connection.createStatement();
-            dbCart.addCart(customer.getId());
-            for (Product product : customer.getCart().getProductList()) {
-                dbOrder.addOrder(product.getId());
-            }
-        }
-    }
 
     public void deleteProduct(int barcode, int personalId) throws SQLException {
         if (connection != null) {

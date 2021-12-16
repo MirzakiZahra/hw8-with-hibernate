@@ -14,6 +14,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    int personalId;
     private String name;
     private int balance;
     private long telephone;
@@ -21,6 +22,13 @@ public class Customer {
     Model.Cart cart = new Model.Cart();
     List<Product> productList = new ArrayList<Product>();
 
+    public int getPersonalId() {
+        return personalId;
+    }
+
+    public void setPersonalId(int personalId) {
+        this.personalId = personalId;
+    }
 
     public List<Product> getProductList() {
         return productList;
@@ -70,8 +78,8 @@ public class Customer {
         this.cart = cart;
     }
 
-    public Customer(int id, String name, int balance, long telephone) {
-        this.id = id;
+    public Customer(int personalId, String name, int balance, long telephone) {
+        this.personalId = personalId;
         this.name = name;
         this.balance = balance;
         this.telephone = telephone;

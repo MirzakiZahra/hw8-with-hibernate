@@ -4,7 +4,7 @@
     <list default="true" id="353e05b3-3364-4649-8d51-b6bf3626ecba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseAccess/DbCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hibernate/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate/Service.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639611553080</updated>
-      <workItem from="1639611556736" duration="10257000" />
+      <workItem from="1639611556736" duration="10678000" />
     </task>
     <servers />
   </component>
