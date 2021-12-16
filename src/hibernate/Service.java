@@ -1,5 +1,6 @@
 package hibernate;
 
+import DatabaseAccess.DbOrder;
 import Model.Cart;
 import Model.Customer;
 import Products.*;
@@ -13,12 +14,24 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
 public class Service {
 
     static SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+    DbOrder dbOrder;
+
+    {
+        try {
+            dbOrder = new DbOrder();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public Service() {
     }
@@ -107,14 +120,15 @@ public class Service {
         session.close();
     }
 
-    public void addCartWithHibernate(int personaId) {
+    public void addCartWithHibernate( int id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "select id from customer where personalId= :personalId";
+        Customer customer = session.load(Customer.class,id);
+      /*  String sql = "select * from customer where personalId= :personalId";
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Cart.class);
         query.setParameter("personalId", personaId);
-        Customer customer = (Customer) query.list().get(0);
+        Customer customer = (Customer) query.list().get(0);*/
         Cart cart=new Cart();
         cart.setCustomer(customer);
         session.save(cart);
@@ -125,10 +139,31 @@ public class Service {
     }
 
     public void addCustomer(Customer customer) {
-
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         session.save(customer);
+        transaction.commit();
+        session.close();
+    }
+    public int findCustomerWithHibernate(int personalId){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        String sql = "sselect id from customer where personalId= :personalId";
+        SQLQuery query = session.createSQLQuery(sql);
+        query.addEntity(Customer.class);
+        query.setParameter("personalId", personalId);
+       Customer customer = (Customer) query.list().get(0);
+
+        return
+
+    }
+    public void addProductToOrder(Customer customer) throws SQLException {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        addCartWithHibernate(customer.getId());
+        for (Product product : customer.getCart().getProductList()) {
+            dbOrder.addOrder(product.getId());
+        }
         transaction.commit();
         session.close();
     }

@@ -16,17 +16,6 @@ public class DbCustomer extends Database {
     public DbCustomer() throws SQLException, ClassNotFoundException {
     }
 
-    public void addCustomer(Customer customer) throws SQLException {
-        if (connection != null) {
-            Statement statement = connection.createStatement();
-            String sql = "insert into customer(name,personalId,balance,telephone) values" +
-                    "( '" + customer.getName() + "','" + customer.getId() + "','" + customer.getBalance() + "'," +
-                    "'" + customer.getTelephone() + "')";
-            statement.executeUpdate(sql);
-
-        }
-
-    }
 
     public void addProductToOrder(Customer customer) throws SQLException {
         if (connection != null) {
@@ -90,3 +79,14 @@ public class DbCustomer extends Database {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -18,13 +18,7 @@ public class Main {
         Customer customer = new Customer();
         Service service=new Service();
         Database database=new Database();
-        DbProduct dbProduct = new DbProduct();
-        DbTv dbTv = new DbTv();
-        DbRadio dbRadio = new DbRadio();
-        DbShoes dbShoes = new DbShoes();
-        DbBook dbBook = new DbBook();
-        DbMagezine dbMagezine = new DbMagezine();
-        DbCustomer dbCustomer = new DbCustomer();
+        DbCustomer dbCustomer=new DbCustomer();
         int barcode = 0;
         int count = 0;
         String input = new String();
@@ -53,14 +47,14 @@ public class Main {
                                         barcode = scanner.nextInt();
                                         count = scanner.nextInt();
                                         store.increaseCount(barcode, count);
-                                        dbProduct.increase("product", barcode, count);
+                                        service.increaseWithHibernate( barcode, count);
                                         break;
                                     case "2":
                                         System.out.println("please enter barcode of product& number of it ");
                                         barcode = scanner.nextInt();
                                         count = scanner.nextInt();
                                         store.decreaseCount(barcode, count);
-                                        dbProduct.decrease("product", barcode, count);
+                                        service.decreaseWithHibernate( barcode, count);
                                         break;
                                     case "3":
                                         System.out.println("please enter id,name,cost,count,feature,brand," +
@@ -68,7 +62,7 @@ public class Main {
                                         store.addTv(scanner.nextInt(), scanner.next(), scanner.nextInt(),
                                                 scanner.nextInt(), scanner.next(), scanner.next(),
                                                 scanner.nextInt(), scanner.next());
-                                        dbTv.add((Television) store.getProduct().get(store.getProduct().size() - 1));
+                                        service.addTv((Television) store.getProduct().get(store.getProduct().size() - 1));
 
                                         break;
                                     case "4":
@@ -77,17 +71,17 @@ public class Main {
                                         store.addRadio(scanner.nextInt(), scanner.next(), scanner.nextInt(),
                                                 scanner.nextInt(), scanner.next(), scanner.next(),
                                                 scanner.next(), scanner.next());
-                                        dbRadio.add((Radio) store.getProduct().get(store.getProduct().size() - 1));
+                                        service.addRadio((Radio) store.getProduct().get(store.getProduct().size() - 1));
                                         break;
                                     case "5":
                                         System.out.println("please enter id,name,cost,count,feature,size,material");
                                         store.addShoes(scanner.nextInt(), scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.next(), scanner.nextInt(), scanner.next());
-                                        dbShoes.add((Shoes) store.getProduct().get(store.getProduct().size() - 1));
+                                        service.addShoes((Shoes) store.getProduct().get(store.getProduct().size() - 1));
                                         break;
                                     case "6":
                                         System.out.println("please enter id,name,cost,count,feature,typeCover,language,publisher,format,page");
                                         store.addBook(scanner.nextInt(), scanner.next(), scanner.nextInt(), scanner.nextInt(), scanner.next(), scanner.next(), scanner.next(), scanner.next(), scanner.next(), scanner.nextInt());
-                                        dbBook.add((Book) store.getProduct().get(store.getProduct().size() - 1));
+                                        service.addBook((Book) store.getProduct().get(store.getProduct().size() - 1));
                                         break;
                                     case "7":
                                         System.out.println("please enter id,name,cost,count,feature,typeCover," +
@@ -95,7 +89,7 @@ public class Main {
                                         store.addMagezine(scanner.nextInt(), scanner.next(), scanner.nextInt(),
                                                 scanner.nextInt(), scanner.next(), scanner.next(), scanner.next(),
                                                 scanner.next(), scanner.next(), scanner.next(), scanner.next());
-                                        dbMagezine.add((Magazine) store.getProduct().get(store.getProduct().size() - 1));
+                                        service.addMagezine((Magazine) store.getProduct().get(store.getProduct().size() - 1));
                                         break;
                                     case "8":
                                         break;
@@ -106,7 +100,8 @@ public class Main {
                             do {
                                 System.out.println("please enter your personalId");
                                 int personalId = scanner.nextInt();
-                                if (dbCustomer.findCustomer(personalId) == 0) {
+                                if (
+                                        dbCustomer.findCustomer(personalId) == 0) {
                                     String add = new String();
                                     do {
                                         System.out.println("1.add customer\n2. exit ");
@@ -119,7 +114,8 @@ public class Main {
                                             customer = new Customer(scanner.nextInt(), scanner.next(), scanner.nextInt(),
                                                     scanner.nextLong());
                                             store.getCustomers().add(customer);
-                                            dbCustomer.addCustomer(customer);
+                                            service.addCustomer(customer);
+                                           // dbCustomer.addCustomer(customer);
                                         }
 
                                     } while (!add.equals("2"));
@@ -142,22 +138,28 @@ public class Main {
                                             }
                                             switch (addCart){
                                                 case "1":
-                                                    database.showProduct("book");
+                                                    service.ShowProduct();
+                                                  //  database.showProduct("book");
                                                     break;
                                                 case "2":
-                                                    database.showProduct("electronic");
+                                                    service.ShowProduct();
+                                                   // database.showProduct("electronic");
                                                     break;
                                                 case "3":
-                                                    database.showProduct("magazine");
+                                                    service.ShowProduct();
+                                                   // database.showProduct("magazine");
                                                     break;
                                                 case "4":
-                                                    database.showProduct("radio");
+                                                    service.ShowProduct();
+                                                   // database.showProduct("radio");
                                                     break;
                                                 case "5":
-                                                    database.showProduct("shoes");
+                                                    service.ShowProduct();
+                                                   // database.showProduct("shoes");
                                                     break;
                                                 case "6":
-                                                    database.showProduct("TV");
+                                                    service.ShowProduct();
+                                                   // database.showProduct("TV");
                                                     break;
 
                                             }
