@@ -1,5 +1,4 @@
-package src;
-
+import Model.Cart;
 import Products.*;
 import Products.Book;
 import Products.Magazine;
@@ -17,23 +16,14 @@ import java.util.List;
 public class Service {
     static SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
-    public List<Products.Product> findProductWithBarcode(int barcode) {
+    public void increaseWithHibernate(int barcode, int number) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        String sql = "select * from product where barcode= :barcode";
+        String sql ="select count from product where barcode= :barcode";
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Products.Product.class);
         query.setParameter("barcode", barcode);
-        List<Products.Product> list = query.list();
-        session.close();
-        return list;
-    }
-
-    public void increaseWithHibernate(int barcode, int number) {
-        Products.Product product = (Products.Product) findProductWithBarcode(barcode);
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        product = session.load(Products.Product.class, product.getId());
+        Product product= (Product)query.list().get(0);
         int temp = product.getCount() + number;
         product.setCount(temp);
         session.update(product);
@@ -42,10 +32,13 @@ public class Service {
     }
 
     public void decreaseWithHibernate(int barcode, int number) {
-        Products.Product product = (Products.Product) findProductWithBarcode(barcode);
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        product = session.load(Products.Product.class, product.getId());
+        String sql ="select count from product where barcode= :barcode";
+        SQLQuery query = session.createSQLQuery(sql);
+        query.addEntity(Products.Product.class);
+        query.setParameter("barcode", barcode);
+        Product product= (Product)query.list().get(0);
         int temp = product.getCount() - number;
         product.setCount(temp);
         session.update(product);
@@ -126,7 +119,21 @@ public class Service {
 
 
     }
-    public void addCartWithHibernate(){
+    public void addCartWithHibernate(int personaId){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        String sql = "select id from customer where personalId= :personalId";
+        SQLQuery query = session.createSQLQuery(sql);
+        query.addEntity(Cart.class);
+        query.setParameter("personalId", personaId);
+       Cart cart = (Cart) query.list().get(0);
+        session.save(cart);
+        transaction.commit();
+        session.close();
+
+
+    }
+    public void addOrderWithHibernate(){
 
     }
 }

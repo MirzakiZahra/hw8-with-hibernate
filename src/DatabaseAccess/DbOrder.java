@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DbOrder  extends Database{
+public class DbOrder  extends DatabaseAccess.Database {
     public DbOrder() throws SQLException, ClassNotFoundException {
     }
     public  void addOrder(int barcode) throws SQLException {

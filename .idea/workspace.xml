@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="353e05b3-3364-4649-8d51-b6bf3626ecba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/txw2_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/byte_buddy_1_11_20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HW8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbMagezine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbMagezine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbRadio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbRadio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbShoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbShoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/DatabaseAccess/DbTv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseAccess/DbTv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Enums/BookType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/BookType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Enums/MagazineType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/MagazineType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Enums/ShoesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/ShoesType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Enums/SourceEnergyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums/SourceEnergyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Exception/InvalidInputException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/InvalidInputException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Electronic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Electronic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Magazine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Magazine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Radio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Radio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Readable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Readable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Shoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Shoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Products/Television.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Television.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="22LKhqR3cHNfP2hxU9J41zDlxVI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/mysql-connector-java-8.0.25.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="353e05b3-3364-4649-8d51-b6bf3626ecba" name="Changes" comment="" />
+      <created>1639611553080</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639611553080</updated>
+      <workItem from="1639611556736" duration="5036000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
