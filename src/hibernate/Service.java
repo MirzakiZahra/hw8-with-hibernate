@@ -1,4 +1,7 @@
+package hibernate;
+
 import Model.Cart;
+import Model.Customer;
 import Products.*;
 import Products.Book;
 import Products.Magazine;
@@ -14,7 +17,11 @@ import java.util.Date;
 import java.util.List;
 
 public class Service {
+
     static SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+
+    public Service() {
+    }
 
     public void increaseWithHibernate(int barcode, int number) {
         Session session = sessionFactory.openSession();
@@ -107,7 +114,9 @@ public class Service {
         SQLQuery query = session.createSQLQuery(sql);
         query.addEntity(Cart.class);
         query.setParameter("personalId", personaId);
-        Cart cart = (Cart) query.list().get(0);
+        Customer customer = (Customer) query.list().get(0);
+        Cart cart=new Cart();
+        cart.setCustomer(customer);
         session.save(cart);
         transaction.commit();
         session.close();
@@ -115,7 +124,12 @@ public class Service {
 
     }
 
-    public void addOrderWithHibernate() {
+    public void addCustomer(Customer customer) {
 
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(customer);
+        transaction.commit();
+        session.close();
     }
 }

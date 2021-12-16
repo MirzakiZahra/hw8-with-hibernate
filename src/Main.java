@@ -4,6 +4,8 @@ import Model.Store;
 import Products.*;
 import Exception.InvalidInputException;
 import Exception.NotFoundException;
+import hibernate.Service;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class Main {
         store.getDateFromServer();
         store.getCustomerDataFromServer();
         Customer customer = new Customer();
+        Service service=new Service();
         Database database=new Database();
         DbProduct dbProduct = new DbProduct();
         DbTv dbTv = new DbTv();

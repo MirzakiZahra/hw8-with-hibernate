@@ -2,12 +2,15 @@ package Model;
 
 import DatabaseAccess.Database;
 import Products.Product;
+import hibernate.Service;
+
 
 import javax.persistence.*;
 import java.sql.SQLException;
 import java.util.*;
 @Entity
 public class Customer {
+    Service service = new Service();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -126,7 +129,8 @@ public class Customer {
             int temp = this.getBalance() - this.showTotalCost();
             this.setBalance(temp);
             for (Product product : this.productList){
-                database.decrease("product",product.getId(),1);
+                service.decreaseWithHibernate(product.getId(),1);
+
             }
             this.cart.productList.clear();
         }
