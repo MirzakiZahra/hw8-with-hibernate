@@ -1,9 +1,7 @@
 package Products;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Product {
@@ -14,6 +12,8 @@ public class Product {
     private int cost;
     private int count;
     private String feature;
+    @ManyToMany(mappedBy = "product")
+    List<Product> productList = (List<Product>) new Product();
 
     public int getId() {
         return id;
