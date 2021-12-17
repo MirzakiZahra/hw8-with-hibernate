@@ -130,7 +130,7 @@ public class Service {
         query.setParameter("personalId", personaId);
         Customer customer = (Customer) query.list().get(0);*/
         Cart cart=new Cart();
-        cart.setCustomer(customer);
+        //cart.setCustomer(customer);
         session.save(cart);
         transaction.commit();
         session.close();

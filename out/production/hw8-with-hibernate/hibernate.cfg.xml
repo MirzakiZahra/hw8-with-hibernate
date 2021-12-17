@@ -15,10 +15,9 @@
         <property name="connection.pool_size">1</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
-        <mapping class="or.mapping.Member"/>
-        <mapping class="or.mapping.Address"/>
-        <mapping class="or.mapping.Role"/>
-        <mapping class="or.mapping.Book"/>
-        <mapping resource="teacher.hbm.xml"/>
+        <mapping class="Model.Cart"/>
+        <mapping class="Model.Customer"/>
+        <mapping class="Products.Product"/>
+
     </session-factory>
 </hibernate-configuration>

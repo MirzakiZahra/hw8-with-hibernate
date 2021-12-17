@@ -18,7 +18,7 @@ public class Customer {
     private String name;
     private int balance;
     private long telephone;
-    @OneToMany
+    @OneToOne(cascade = CascadeType.ALL)
     Model.Cart cart = new Model.Cart();
     List<Product> productList = new ArrayList<Product>();
 

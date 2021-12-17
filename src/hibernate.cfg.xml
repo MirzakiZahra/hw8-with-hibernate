@@ -18,6 +18,6 @@
         <mapping class="Model.Cart"/>
         <mapping class="Model.Customer"/>
         <mapping class="Products.Product"/>
-       
+
     </session-factory>
 </hibernate-configuration>
