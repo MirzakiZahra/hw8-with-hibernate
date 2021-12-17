@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.*;
 @Entity
 public class Customer {
+    @Transient
     Service service = new Service();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
