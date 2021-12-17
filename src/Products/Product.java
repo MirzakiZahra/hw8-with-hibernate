@@ -17,7 +17,7 @@ public class Product {
     private int count;
     private String feature;
     @ManyToMany(mappedBy = "productList")
-    List<Cart> cartList = (List<Cart>) new Cart();
+    List<Cart> cartList = new ArrayList<>();
     @ManyToMany(mappedBy = "productList")
     List<Customer> customerList = new ArrayList<>();
     public int getId() {
