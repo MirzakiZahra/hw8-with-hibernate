@@ -1,5 +1,7 @@
 package Products;
 
+import Model.Cart;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,8 +14,8 @@ public class Product {
     private int cost;
     private int count;
     private String feature;
-    @ManyToMany(mappedBy = "product")
-    List<Product> productList = (List<Product>) new Product();
+    @ManyToMany(mappedBy = "productList")
+    List<Cart> cartList = (List<Cart>) new Cart();
 
     public int getId() {
         return id;
