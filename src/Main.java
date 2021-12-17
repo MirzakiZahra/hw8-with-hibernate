@@ -166,7 +166,8 @@ public class Main {
                                             System.out.println("please enter barcode");
                                             barcode = scanner.nextInt();
                                             customer.addProductToCart(barcode,store);
-                                            dbCustomer.addProductToOrder(customer);
+                                            service.addProductToOrder(customer);
+                                            //dbCustomer.addProductToOrder(customer);
                                             break;
                                         case "2":
                                             System.out.println("please enter barcode");
