@@ -1,8 +1,10 @@
 package Products;
 
 import Model.Cart;
+import Model.Customer;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,7 +18,8 @@ public class Product {
     private String feature;
     @ManyToMany(mappedBy = "productList")
     List<Cart> cartList = (List<Cart>) new Cart();
-
+    @ManyToMany(mappedBy = "productList")
+    List<Customer> customerList = new ArrayList<>();
     public int getId() {
         return id;
     }

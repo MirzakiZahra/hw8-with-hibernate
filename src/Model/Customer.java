@@ -20,6 +20,7 @@ public class Customer {
     private long telephone;
     @OneToOne(cascade = CascadeType.ALL)
     Model.Cart cart = new Model.Cart();
+    @ManyToMany
     List<Product> productList = new ArrayList<Product>();
 
     public int getPersonalId() {
