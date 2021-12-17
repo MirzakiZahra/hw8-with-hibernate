@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         Scanner scanner = new Scanner(System.in);
         Store store = new Store();
-        store.getDateFromServer();
-        store.getCustomerDataFromServer();
+        //store.getDateFromServer();
+        //store.getCustomerDataFromServer();
         Customer customer = new Customer();
         Service service=new Service();
         Database database=new Database();
